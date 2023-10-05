@@ -3,15 +3,52 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<title>Tuotempo: Accordion</title>
+		<title>IK Library: Accordion</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link href="assets/tuotempo/style.css" rel="stylesheet" type="text/css">
-		<script src="assets/tuotempo/utils.js"></script>
+		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
+		<script src="assets/ik_utils.js"></script>
+		<script src="assets/ik_accordion.js"></script>
+		<script>
+			
+			//var $pb, timer;
+			
+			$(document).ready(function() {
+				
+				$(".multiselect").ik_accordion();
+				$(".singleselect").ik_accordion({ 'autoCollapse': true});
+				
+			});
+
+			function openAccordion(element) {
+				console.log(element)
+			}
+			
+		</script>
 	</head>
 	<body>
-    <p>
-      Ciao
-    </p>
-		
+		<main>
+			<a href="index.html">&larr; Index</a>
+			<h1 tabindex="0">Accordion</h1>
+			<h2 tabindex="0" id="autocollapse_multi-title">autoCollapse = false</h2>
+			<div aria-labelledby="autocollapse_multi-title">
+				<dl class="multiselect" aria-multiselectable="true">
+					<dt role="button" tabindex="0" aria-expanded="false">Accordion panel</dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo.</dd>
+					<dt role="button" tabindex="0" aria-expanded="false">Accordion panel</dt>
+					<dd>Vestibulum feugiat nibh enim, sed accumsan ante cursus sit amet. Nam metus est, rutrum vitae nibh ut, consectetur ultrices lacus. Duis a aliquam tortor, eget viverra elit. Vivamus vitae dui in ex sagittis hendrerit.</dd>
+				</dl>
+			</div>
+			<h2 tabindex="0" id="autocollapse-title">autoCollapse = true</h2>
+			<div role="region" aria-labelledby="autocollapse-title">
+				<dl class="singleselect" aria-multiselectable="false">
+					<dt role="button" aria-expanded="false" tabindex="0">Accordion panel</dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo.</dd>
+					<dt role="button" aria-expanded="false" tabindex="0">Accordion panel</dt>
+					<dd>Vestibulum feugiat nibh enim, sed accumsan ante cursus sit amet. Nam metus est, rutrum vitae nibh ut, consectetur ultrices lacus. Duis a aliquam tortor, eget viverra elit. Vivamus vitae dui in ex sagittis hendrerit.</dd>
+					<dt role="button" aria-expanded="false" tabindex="0">Accordion panel</dt>
+					<dd>Nullam consectetur erat purus, nec molestie metus molestie at. Aliquam lobortis ipsum nec sapien auctor, ut pharetra erat sollicitudin. Ut nulla nunc, suscipit eget ante et, egestas pharetra odio. Sed sed varius massa. Integer sed volutpat leo. Vestibulum feugiat nibh enim, sed accumsan ante cursus sit amet. Nam metus est, rutrum vitae nibh ut, consectetur ultrices lacus. Duis a aliquam tortor, eget viverra elit. Vivamus vitae dui in ex sagittis hendrerit.</dd>
+				</dl>
+			</div>
+		</main>
 	</body>
 </html>
